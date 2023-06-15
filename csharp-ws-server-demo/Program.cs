@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace csharp_ws_server_demo
 {
@@ -10,6 +6,13 @@ namespace csharp_ws_server_demo
   {
     static void Main(string[] args)
     {
+      MyServer server = new MyServer();
+
+      while (true)
+      {
+        string message = Console.ReadLine();
+        server.BroadcastMessage(message);
+      }
     }
   }
 }
